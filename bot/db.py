@@ -3,9 +3,10 @@ from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, Asyn
 from aiogram.types import Message
 
 from bot.models import DBBaseModel, UserPay
-from bot.config import PGUSER, PGPORT, PGPASSWORD, PGDB, PGHOST
+#from bot.config import PGUSER, PGPORT, PGPASSWORD, PGDB, PGHOST # для Постгреса
 
-DATABASEURI = f'postgresql+asyncpg://{PGUSER}:{PGPASSWORD}@{PGHOST}:{PGPORT}/{PGDB}'
+#DATABASEURI = f'postgresql+asyncpg://{PGUSER}:{PGPASSWORD}@{PGHOST}:{PGPORT}/{PGDB}'
+DATABASEURI = 'sqlite+aiosqlite:///paydb'
 
 async_engine = create_async_engine(url=DATABASEURI, echo=True)
 
